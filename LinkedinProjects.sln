@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{548CE4A6-6131-4D78-BEA2-C99EF4DFB9AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp.NetCore", "Asp.NetCore", "{807FBFF2-3267-489F-94E4-5FDD4D1D9A2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCore", "src\Asp.NetCore\Asp.NetCore\Asp.NetCore.csproj", "{9645E404-EA03-4A3A-AE60-42E58390C111}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9645E404-EA03-4A3A-AE60-42E58390C111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9645E404-EA03-4A3A-AE60-42E58390C111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9645E404-EA03-4A3A-AE60-42E58390C111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9645E404-EA03-4A3A-AE60-42E58390C111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{807FBFF2-3267-489F-94E4-5FDD4D1D9A2A} = {548CE4A6-6131-4D78-BEA2-C99EF4DFB9AF}
+		{9645E404-EA03-4A3A-AE60-42E58390C111} = {807FBFF2-3267-489F-94E4-5FDD4D1D9A2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DED5E875-2933-432B-BCD8-922C99095F27}
