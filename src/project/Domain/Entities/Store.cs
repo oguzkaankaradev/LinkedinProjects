@@ -23,6 +23,6 @@ namespace Domain.Entities
         public string CompanyAddress { get; set; }
         public string CompanyPhoneNumber { get; set; }
         public string CompanyVat { get; set; }
-        public bool Deleted { get; set; }
+        public bool Deleted { get; set; } 
     }
 }
