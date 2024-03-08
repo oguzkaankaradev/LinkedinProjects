@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\ContextsServices\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Application\Application.csproj" />
+    <ProjectReference Include="..\src\project\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
