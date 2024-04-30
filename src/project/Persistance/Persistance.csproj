@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Contexts\ContextsServices\" />
+    <Folder Include="Contexts\StoreContext\" />
   </ItemGroup>
 
   <ItemGroup>

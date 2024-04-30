@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "src\project\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\project\Domain\Domain.csproj", "{6D63568D-FF96-450C-AA9E-B9E472CCDF9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\project\Application\Application.csproj", "{0068E19E-E0A0-485A-BF6D-66BE848013C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\project\Application\Application.csproj", "{0068E19E-E0A0-485A-BF6D-66BE848013C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

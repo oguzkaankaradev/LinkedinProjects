@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Core.Base.Domain.Entities
 {
     public class Store
     {
@@ -23,6 +23,6 @@ namespace Domain.Entities
         public string CompanyAddress { get; set; }
         public string CompanyPhoneNumber { get; set; }
         public string CompanyVat { get; set; }
-        public bool Deleted { get; set; } 
+        public bool Deleted { get; set; }
     }
 }
