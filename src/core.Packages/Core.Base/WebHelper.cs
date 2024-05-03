@@ -1,5 +1,9 @@
 ﻿using Core.Base.Domain.Context;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +19,20 @@ namespace Core.Base
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUrlHelperFactory _urlHelperFactory;
         private readonly Lazy<IStoreContext> _storeContext;
+
+        public WebHelper(IActionContextAccessor actionContextAccessor, 
+            IHostApplicationLifetime hostApplicationLifetime, 
+            IHttpContextAccessor httpContextAccessor, 
+            IUrlHelperFactory urlHelperFactory, Lazy<IStoreContext> storeContext)
+
+        {
+            _actionContextAccessor = actionContextAccessor;
+            _hostApplicationLifetime = hostApplicationLifetime;
+            _httpContextAccessor = httpContextAccessor;
+            _urlHelperFactory = urlHelperFactory;
+            _storeContext = storeContext;
+        }
+
         public bool IsRequestBeingRedirected => throw new NotImplementedException();
 
         public bool IsPostBeingDone { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -49,9 +67,32 @@ namespace Core.Base
             throw new NotImplementedException();
         }
 
-        public string GetUrlReferrer()
+        public virtual string GetUrlReferrer()
         {
-            throw new NotImplementedException();
+            if (!IsRequestAvailable())
+                return string.Empty;
+
+            return _httpContextAccessor.HttpContext.Request.Headers[HeaderNames.Referer];
+
+        }
+
+        protected virtual bool IsRequestAvailable()
+        {
+            if (_httpContextAccessor?.HttpContext == null)
+                return false;
+
+            try
+            {
+                if(_httpContextAccessor.HttpContext.Request == null)
+                    return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+            return true;
         }
 
         public bool IsAjaxRequest(HttpRequest request)
